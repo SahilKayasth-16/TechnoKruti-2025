@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    background: url(../images/tech.png) no-repeat center center fixed;
+    background-size: cover;
+    color: #9b111e;
+}
+
+/* Heading Section */
+#heading {
+    text-align: center;
+    padding: 20px;
+    background-color: #9b111e;
+    color: #ffffff;
+}
+
+#heading h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Events Section */
+div > .aboutevent {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 2px solid #9b111e;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutevent h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #9b111e;
+}
+
+.aboutevent button {
+    background-color: #9b111e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.aboutevent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.aboutevent button:hover {
+    background-color: #ffffff;
+    color: #9b111e;
+    transform: scale(1.1);
+}
+
+/* Explore Button Section */
+#btn {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#btn button {
+    background-color: #9b111e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn button:hover {
+    background-color: #ffffff;
+    color: #9b111e;
+    transform: scale(1.1);
+}
+
+div > #btn1 {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    background-color: #ffffff;
+    height: 40px;
+    width: 120px;
+    color: #9b111e;
+    border: 1px solid #9b111e;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+div > #btn1:hover {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    background-color: #ffffff;
+    height: 45px;
+    width: 130px;
+    color: #9b111e;
+    border: 1px solid #9b111e;
+    border-radius: 5px;
+    font-size: 16px; 
+}
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 2px solid #9b111e;
+    margin: 20px 0;
+}
+
+
+/* ========== MEDIUM DEVICES (Tablets, 768px to 1199px) ========== */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    #heading h1 {
+        font-size: 2rem;
+    }
+
+    .aboutevent {
+        width: 45%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    #btn1 {
+        position: static;
+        display: block;
+        margin: 15px auto 0 auto;
+    }
+}
+
+/* ========== SMALL DEVICES (Mobiles, 576px to 767px) ========== */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    #heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .aboutevent {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    #btn1 {
+        position: static;
+        display: block;
+        margin: 10px auto 0 auto;
+    }
+
+    .aboutevent h4, .aboutevent h5 {
+        font-size: 0.95rem;
+    }
+
+    .aboutevent button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+/* ========== EXTRA SMALL DEVICES (Phones, up to 575px) ========== */
+@media screen and (max-width: 575px) {
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    #heading {
+        padding: 15px 10px;
+    }
+
+    #heading h1 {
+        font-size: 1.5rem;
+    }
+
+    #btn1 {
+        position: static;
+        width: 100%;
+        margin: 10px 0 0 0;
+        font-size: 0.9rem;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .aboutevent {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .aboutevent h4, .aboutevent h5 {
+        font-size: 0.9rem;
+    }
+
+    .aboutevent button {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    hr {
+        margin: 15px 0;
+    }
+}

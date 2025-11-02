@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, #eee9e9);
+    color: #333;
+}
+#main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+/* Header 1 - Institute Info */
+#header_1 {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #9b111e;
+    color: whitesmoke;
+    border-bottom: 4px solid #ffd700;
+    border-radius: 8px;
+}
+#header_1 #image {
+    flex: 0.2;
+    text-align: center;  
+}
+#header_1 #text {
+    flex: 0.8;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+#header_1 h3 {
+    font-size: 24px;
+    margin: 5px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#header_1 h4 {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 10px;
+}
+/* Header 2 - Techfest Title */
+#header_2 {
+    text-align: center;
+    background-image: url(../images/tech.png); /* Dark blue */
+    background-size: cover;
+    background-repeat: no-repeat;
+   /* background-color: #9b111e; */
+    color: #fff;
+    border-radius: 8px;
+    border: 3px solid silver;
+    margin-top: 20px;
+}
+#header_2 h6 {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    color: #9b111e;
+}
+#header_2 h1 {
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    color: #9b111e;
+}
+#header_2 h2 {
+    font-size: 40px;
+    animation: slideDown 2s ease-out;
+}
+#header_2 h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: black; /* Gold text for highlights */
+    padding: 10px 0px 10px 0px;
+}
+#header_2 h4 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #9b111e;
+}
+#header_2 h5 {
+    font-size: 25px;
+    padding: 0px 10px 35px 10px; 
+    color: #9b111e;
+}
+/* Departments Section */
+#departments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.dept {
+    flex: 1 1 calc(33% - 20px);
+    background: #ffffff;
+    border: 2px solid #adebb3;
+    border-radius: 8px;
+    height: 490px;
+    width: 400px;
+    margin: 5px;
+    margin-left: 106px;
+    margin-right: 106px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dept:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.dept img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.dept h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #9b111e;
+}
+.dept h4 {
+    font-size: 16px;
+    color: #555;
+}
+/* Address Section */
+#address {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #9b111e;
+    color: white;
+    border-radius: 8px;
+    border-top: 3px solid #ffd700;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.new {
+    margin: 2px;
+}
+#ques {
+    text-align: center;
+    color: #9b111e;
+    font-size: 50px;
+   
+}
+#ans {
+    background-color: #ffd700;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: #9b111e;
+    font-size: 25px;
+    
+}
+#ans p {
+   
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 45s linear infinite;
+    font-weight: bold;
+    color: #9b111e;
+
+}
+/*sponsor*/
+#sponsor {
+    width: 97%;
+    background: #9b111e;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.sponsor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+.sponsor-item img {
+    height: 135px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.sponsor-text {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 758px) {
+    #sponsor {
+        flex-direction: column;
+        text-align: center;
+    }
+    .sponsor-item {
+        flex-direction: column;
+    }
+}
+/* MEDIA QUERIES FOR TECHNO-KRUTI WEBSITE */
+
+/* ========== Extra Large Devices (1200px and above) ========== */
+
+/* ========== Large Devices (992px to 1199px) ========== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #header_1 h3 {
+    font-size: 22px;
+  }
+  #header_1 h4 {
+    font-size: 16px;
+  }
+  #header_2 h1 {
+    font-size: 48px;
+  }
+  .dept {
+    flex: 1 1 calc(35% - 20px);
+    margin: 10px;
+  }
+}
+
+/* ========== Medium Devices (768px to 991px) ========== */
+@media (min-width: 768px) and (max-width: 991px) {
+  #header_1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  #header_1 #text {
+    flex: 1;
+  }
+  #header_2 h1 {
+    font-size: 40px;
+  }
+  .dept {
+    flex: 1 1 calc(48% - 10px);
+    margin: 10px auto;
+  }
+}
+
+/* ========== Small Devices (576px to 767px) ========== */
+@media (min-width: 576px) and (max-width: 767px) {
+  #header_2 h1 {
+    font-size: 32px;
+  }
+  #ques {
+    font-size: 36px;
+  }
+  #ans p {
+    font-size: 20px;
+  }
+  .dept {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+}
+
+/* ========== Extra Small Devices (Below 576px) ========== */
+@media (max-width: 575px) {
+  #header_1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  #header_1 #text h3,
+  #header_1 #text h4 {
+    font-size: 14px;
+  }
+  #header_2 h1 {
+    font-size: 26px;
+  }
+  #ques {
+    font-size: 28px;
+  }
+  #ans p {
+    font-size: 16px;
+  }
+  .dept {
+    width: 100%;
+    margin: 10px 0;
+  }
+  #sponsor {
+    flex-direction: column;
+  }
+  .sponsor-item img {
+    width: 100%;
+    height: auto;
+  }
+  #address h2 {
+    font-size: 16px;
+  }
+}
