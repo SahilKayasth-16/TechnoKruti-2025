@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Event Registration</title>
+    <link rel="stylesheet" type="text/css" href="../css/Solo_Event_Form.css">
+    
+</head>
+<body>
+    <div id="heading">
+        <h1>Let's Confirm Your Seat</h1>
+    </div>
+   <form action="#" method="post" id="frm">
+       <h2 id="title">Registration Form:</h2>
+        <input type="text" class="box" name="first_name" placeholder="Enter your first name" required /><br/><br/>
+        <input type="text" class="box" name="last_name" placeholder="Enter your last name" required /><br/><br/>
+        <input type="email" class="box" name="mail" placeholder="Enter your email" required /><br/><br/>
+        <input type="text" class="box" name="contact" placeholder="Enter your contact number" required /><br/><br/>
+        <input type="text" class="box" name="college" placeholder="Enter your college name" required /><br/><br/>
+        <input type="text" class="box" name="branch" placeholder="Enter your branch" required /><br/><br/>
+        <h4>Choose Your Event:</h4>
+        <table>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_1" value="50"><label for="event_1">The Presenter</label></td>
+                <td><input type="checkbox" class="event" id="event_2" value="50"><label for="event_2">Web Warriors</label></td>
+                <td><input type="checkbox" class="event" id="event_3" value="50"><label for="event_3">Scatter ball</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_4" value="50"><label for="event_4">Break The Pyramid </label></td>
+                <td><input type="checkbox" class="event" id="event_5" value="50"><label for="event_5">Code Crafters</label></td>
+                <td><input type="checkbox" class="event" id="event_6" value="50"><label for="event_6">Task Rush</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_7" value="50"><label for="event_7">Query Quest</label></td>
+                <td><input type="checkbox" class="event" id="event_8" value="50"><label for="event_8">Squid Game 2.0</label></td>
+                <td><input type="checkbox" class="event" id="event_9" value="50"><label for="event_9">Brain Teaser</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_10" value="50"><label for="event_10">Meme Mania</label></td>
+                <td><input type="checkbox" class="event" id="event_11" value="50"><label for="event_11">Fear Factor</label></td>
+                <td><input type="checkbox" class="event" id="event_12" value="50"><label for="event_12">Buzz off</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_13" value="50"><label for="event_13">Frame The Moment</label></td>
+                <td><input type="checkbox" class="event" id="event_14" value="50"><label for="event_14">CAD Cracker</label></td>
+                <td><input type="checkbox" class="event" id="event_15" value="50"><label for="event_15">Laser Mazz</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="event" id="event_16" value="50"><label for="event_16">Tech Reel </label></td>
+                <td><input type="checkbox" class="event" id="event_17" value="50"><label for="event_17">Snake O Mystery</label></td>
+                <td><input type="checkbox" class="event" id="event_18" value="50"><label for="event_18">Dart Stroke</label></td>
+            </tr>
+        </table>
+        <h4 for="payoption" id="txt">Select Mode Of Payment:</h4><br/>
+        <div class="radio-group">
+            <input type="radio" name="payment_mode" id="online">
+            <label for="online" style="margin-left: 5px;">Online Payment</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" name="payment_mode" id="cash">
+            <label for="cash" style="margin-left: 5px;">Cash</label>
+        </div>
+
+        <input type="text" class="box" name="total_amount" placeholder="Total amount" value="0" id="totalamount" readonly/><br/><br/>
+        <input type="text" class="box" name="receiver_name" placeholder="Enter Payment Receiver's Name" required /><br/><br/>
+        <input type="text" class="box" id="upi_id" name="upi" placeholder="Enter Payment Receiver's UPI ID" disabled/><br/><br/>
+        <button type="submit" id="btn">Submit</button>
+   </form>
+</body>
+<script>
+    // Get elements
+    const payment_options = document.getElementsByName("payment_mode");
+    const upi_text_field = document.getElementById("upi_id");
+    const checkboxes = document.querySelectorAll(".event");
+    const input_total = document.getElementById("totalamount");
+ 
+    // Function to activate UPI input field
+    function activate_UPI_field() {
+        if (document.getElementById('online').checked) {
+            upi_text_field.disabled = false; 
+        } else {
+            upi_text_field.disabled = true; 
+        }
+    }
+
+    //function to display total amount
+    function display_total_amount() {
+        let total = 0;
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                total += parseInt(checkbox.value);
+                }
+        });
+
+        input_total.value = total;
+    }
+
+    
+    // Add event listener to radio buttons
+    payment_options.forEach(radio => {
+        radio.addEventListener('change', activate_UPI_field);
+    });
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', display_total_amount);
+    });
+
+
+ </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Type</title>
+    <link rel="stylesheet" type="text/css" href="../css/event_type.css">
+</head>
+<body>
+    <div id="heading">
+        <h1>Let's Confirm Your Seat</h1>
+    </div>
+    <div id="txt">
+        <h2>Select Your Event Type:</h2>
+    </div>
+    <div id="option">
+        <button type="button" onclick="register_form(1)">Solo Event</button>
+        <button type="button" onclick="register_form(2)">Group Event</button>
+    </div>
+</body>
+<script>
+    function register_form(event_type) {
+        if (event_type === 1) {
+           window.location.href = 'Solo_Event_Form.html'; 
+        } else if (event_type === 2) {
+            window.location.href = 'Group_Event_Form.html';
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Group Event Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/Group_Event_Form.css">
+</head>
+<body>
+  <div id="heading">
+    <h1>Let's Confirm Your Seat</h1>
+  </div>
+
+  <form action="#" method="post" id="frm">
+    <h2>Registration Form:</h2>
+    <h5 id="inst">
+      Note:<br/>
+      (1) Only team leader can register<br/>
+      (2) Fill participant details based on event requirements and leave others blank.
+    </h5>
+
+    <table>
+      <!-- Participants Loop -->
+      <script>
+        document.write(
+          Array.from({ length: 6 }).map((_, i) => `
+            <tr>
+              <td><input type="text" class="box" name="participants[${i}][name]" placeholder="Participant ${i+1}'s full name"/></td>
+              <td><input type="tel" class="box" name="participants[${i}][contact]" placeholder="Participant ${i+1}'s contact" pattern="[0-9]{10}"/></td>
+              <td><input type="email" class="box" name="participants[${i}][email]" placeholder="Participant ${i+1}'s email"/></td>
+            </tr>
+          `).join('')
+        );
+      </script>
+    </table>
+
+    <input type="text" class="box" name="institute" placeholder="Enter your institute's name" required />
+
+    <h4>Choose Your Event(s):</h4>
+    <table>
+      <script>
+        const events = [
+          "Straw Strapper", "Paper Presentation", "DIY Delights",
+          "Bridge Your Way", "Robo Football", "Treasure Hunt",
+          "Mind Bend", "Free Fire Max Battle", "Fun Frenzy",
+          "Construct O Planning", "Junk Yard", "Poster Presentation",
+          "The Observer", "IPL Auction", "Model Presentation",
+          "The Battleground", "Quiz O Hunt", "Circuit Mania",
+          "Ludo", "Fast Of Fury", "Electro Quizz",
+          "Box Cricket", "Poster Making", "Arduino",
+          "Compile Clash", "Synopsis", "Clash Of Clans",
+          "Blind Volleyball", "Saptrangi", "Octa Carrom",
+          "Lathe War"
+        ];
+        document.write(
+          events.map((event, i) => i % 3 === 0 ? '<tr>' : '' +
+            `<td>
+              <input type="checkbox" class="event" id="event_${i}" value="100">
+              <label for="event_${i}">${event}</label>
+            </td>` + ((i % 3 === 2 || i === events.length - 1) ? '</tr>' : '')
+          ).join('')
+        );
+      </script>
+    </table>
+
+    <h4>Select Mode Of Payment:</h4>
+    <div style="display: flex; gap: 20px; margin-left: 10px;">
+      <label>
+        <input type="radio" name="payment_mode" id="online" value="online"/> Online Payment
+      </label>
+      <label>
+        <input type="radio" name="payment_mode" id="cash" value="cash"/> Cash
+      </label>
+    </div>
+
+    <br/>
+    <input type="text" class="box" name="total_amount" placeholder="Total amount" value="0" id="totalamount" readonly/><br/>
+    <input type="text" class="box" name="receiver_name" placeholder="Enter Payment Receiver's Name" required /><br/>
+    <input type="text" class="box" id="upi_id" name="upi" placeholder="Enter Payment Receiver's UPI ID" disabled/><br/>
+
+    <div id="btn-container">
+      <button type="submit" id="btn">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    const payment_options = document.getElementsByName("payment_mode");
+    const upi_text_field = document.getElementById("upi_id");
+    const checkboxes = document.querySelectorAll(".event");
+    const input_total = document.getElementById("totalamount");
+
+    // Enable/Disable UPI field
+    function activate_UPI_field() {
+      upi_text_field.disabled = !document.getElementById('online').checked;
+    }
+
+    // Calculate total amount based on selected events
+    function display_total_amount() {
+      let total = 0;
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          total += parseInt(checkbox.value);
+        }
+      });
+      input_total.value = total;
+    }
+
+    // Confirmation before form submit
+    document.getElementById("frm").addEventListener("submit", function (e) {
+      if (!confirm("Are you sure you want to submit the form?")) {
+        e.preventDefault();
+      }
+    });
+
+    // Event Listeners
+    payment_options.forEach(radio => {
+      radio.addEventListener('change', activate_UPI_field);
+    });
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', display_total_amount);
+    });
+  </script>
+</body>
+</html>

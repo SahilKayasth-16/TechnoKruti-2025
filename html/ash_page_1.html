@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Attractions</title>
+    <link rel="stylesheet" type="text/css" href="../css/ash_page_1.css">
+</head>
+<body>
+    <div id="heading">
+        <h1>Applied Science & Humanities</h1>
+        <button id="btn1" onclick="direct_1()">Register Now</button>
+    </div>
+    <div id="events">
+        <div class="aboutevent">
+            <h4>Treasure Hunt(200 Rs.)</h4>
+            <h5>Event type: Group<br/>No. of Participants:4 compulsory</h5>
+            <button onclick="opennewtab_1()">Download rules</button>
+        </div>
+        <div class="aboutevent">
+            <h4>Fun Frenzy(200 Rs.)</h4>
+            <h5>Event type: Group<br/>No. of Participants:4 compulsory</h5>
+            <button onclick="opennewtab_2()">Download rules</button>
+        </div>
+        <div class="aboutevent">
+            <h4>Task Rush(30 Rs.)</h4>
+            <h5>Event type: Solo<br/>No. of Participants:1</h5>
+            <button onclick="opennewtab_3()">Download rules</button>
+        </div>
+        <div class="aboutevent">
+            <h4>Brain Teasers(50 Rs.)</h4>
+            <h5>Event type: Solo<br/>No. of Participants:1</h5>
+            <button onclick="opennewtab_4()">Download rules</button>
+        </div>
+        <div class="aboutevent">
+            <h4>Scatter Ball(20 Rs.)</h4>
+            <h5>Event type: Solo<br/>No. of Participants:1</h5>
+            <button onclick="opennewtab_5()">Download rules</button>
+        </div>
+    </div>
+    <hr/>
+</body>
+<script>
+    function direct_1() {
+       window.location.href = "evnt_type.html";
+    }
+    function opennewtab_1() {
+        window.open("Treasure_hunt.pdf", "_blank");
+    }
+    function opennewtab_2() {
+        window.open("Fun_frenzy.pdf", "_blank");
+    }
+    function opennewtab_3() {
+        window.open("Task_rush.pdf", "_blank");
+    }
+    function opennewtab_4() {
+        window.open("Brain_teaser.pdf", "_blank");
+    }
+    function opennewtab_5() {
+        window.open("scatter_ball.pdf", "_blank");
+    }
+</script>
+</html>
